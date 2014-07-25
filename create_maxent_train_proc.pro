@@ -92,9 +92,13 @@ for i=0, n_class-1 do begin
 	endif
 endfor
 
-indices2 = where(raw_data.(slope_col) le max_slope)
+if (slope_col ne -1) then begin
+	indices2 = where(raw_data.(slope_col) le max_slope)
 
-final_index = setintersection(indices,indices2)
+	final_index = setintersection(indices,indices2)
+endif else begin
+	final_index = indices
+endelse
 
 data = create_struct(raw_tag_names[0], (raw_data.(0))[final_index])
 for i=1, raw_n_data_cols-1 do begin
