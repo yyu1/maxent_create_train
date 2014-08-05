@@ -4,7 +4,7 @@
 ;This version takes in unmodified coordinates
 
 
-PRO create_maxent_train_proc_unmod, in_file, log_file, x_col, y_col, val_col, class_col, slope_col, max_slope, class_to_use, out_train_file, out_valid_file, out_bin_file, train_pct, max_bins, min_bin_width, min_bin_members, valname, coordformat, valformat, max_bin_start
+PRO create_maxent_train_proc_unmodxy, in_file, log_file, x_col, y_col, val_col, class_col, slope_col, max_slope, class_to_use, out_train_file, out_valid_file, out_bin_file, train_pct, max_bins, min_bin_width, min_bin_members, valname, coordformat, valformat, max_bin_start
 
 ;---------------settings--------------------------
 ;in_file = '/Volumes/Global_250m/samples/glas/glas_sea.csv'

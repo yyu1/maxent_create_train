@@ -38,7 +38,7 @@ class_to_use = [40,160]
 out_train_file = '/Volumes/Global_250m/samples/glas/train_hlorey_v3/sam/train_hlorey_sam_v3_cl40160.csv'
 out_valid_file = '/Volumes/Global_250m/samples/glas/train_hlorey_v3/sam/valid_hlorey_sam_v3_cl40160.csv'
 out_bin_file = '/Volumes/Global_250m/samples/glas/train_hlorey_v3/sam/bin_hlorey_sam_v3_cl40160.csv'
-create_maxent_train_proc, in_file, log_file, x_col, y_col, val_col, class_col, slope_col, max_slope, class_to_use, out_train_file, out_valid_file, out_bin_file, train_pct, max_bins, min_bin_width, min_bin_members, valname, coordformat, valformat, max_bin_start
+create_maxent_train_proc_unmodxy, in_file, log_file, x_col, y_col, val_col, class_col, slope_col, max_slope, class_to_use, out_train_file, out_valid_file, out_bin_file, train_pct, max_bins, min_bin_width, min_bin_members, valname, coordformat, valformat, max_bin_start
 
 ;in_file = '/Volumes/Global_250m/samples/glas/glas_sam.csv'
 ;log_file = '/Volumes/Global_250m/samples/glas/train_hlorey_v1/train_hlorey_sam_v1_cl5060100.log'
