@@ -58,7 +58,7 @@ print, 'max_bin_start', max_bin_start
 ;load modsingrid transformation routine
 
 
-outheader = 'class,modsin_x,modsin_y,' + valname
+outheader = 'class,modsin_x,modsin_y,' + valname + ',category'
 openr, 1, in_file
 openw, 2, out_train_file
 openw, 3, out_valid_file
@@ -137,7 +137,7 @@ for i=0ULL, n_plots-1 do begin
 	cur_bin = whichbin(bins, cur_val)
 	cur_name = bin_names[cur_bin]
 	if (randomu(seed) lt (0.01 * train_pct)) then out_fid = 2 else out_fid = 3
-	printf, out_fid, cur_name + ',' + strtrim(string(coords[0],format=coordformat),2) + ',' + strtrim(string(coords[1],format=coordformat),2) + ',' + strtrim(string(cur_val,format=valformat),2)
+	printf, out_fid, cur_name + ',' + strtrim(string(coords[0],format=coordformat),2) + ',' + strtrim(string(coords[1],format=coordformat),2) + ',' + strtrim(string(cur_val,format=valformat),2) + ',' + strtrim(string(fix(cur_bin)),2)
 endfor
 
 close, /all
