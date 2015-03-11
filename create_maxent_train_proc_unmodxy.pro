@@ -3,6 +3,7 @@
 
 ;This version takes in unmodified coordinates
 
+;modification 12/5/2014  if class_to_use = 0, means ignore class matching
 
 PRO create_maxent_train_proc_unmodxy, in_file, log_file, x_col, y_col, val_col, class_col, slope_col, max_slope, class_to_use, out_train_file, out_valid_file, out_bin_file, train_pct, max_bins, min_bin_width, min_bin_members, valname, coordformat, valformat, max_bin_start
 
@@ -78,7 +79,11 @@ if (size_result[0] eq 0) then n_class = 1 else n_class = size_result[1]
 indices_ptr = ptrarr(n_class)
 counts = lonarr(n_class)
 for i=0, n_class-1 do begin
-	index = where((raw_data.(class_col) eq class_to_use[i]) and (raw_data.(val_col) lt 60), count) ;ignore hlorey = 60
+	if (class_to_use[i] eq 0) then begin
+		index = where((raw_data.(val_col) lt 60), count)
+	endif else begin
+		index = where((raw_data.(class_col) eq class_to_use[i]) and (raw_data.(val_col) lt 60), count) ;ignore hlorey = 60
+	endelse
 	counts[i] = count
 	if (count gt 0) then begin
 		indices_ptr[i] = ptr_new(index)
