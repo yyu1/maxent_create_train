@@ -30,6 +30,8 @@ PI = 3.141592653589793238d0
 ;valformat = '(f4.1)' ;format code for value
 ;-------------------------------------------------
 
+max_bin_start = 600
+
 
 ;**************
 journal, log_file
@@ -80,7 +82,8 @@ indices_ptr = ptrarr(n_class)
 counts = lonarr(n_class)
 for i=0, n_class-1 do begin
 	if (class_to_use[i] eq 0) then begin
-		index = where((raw_data.(val_col) lt 60), count)
+		;index = where((raw_data.(val_col) lt 60), count)
+		index = where((raw_data.(val_col) gt 0), count)
 	endif else begin
 		index = where((raw_data.(class_col) eq class_to_use[i]) and (raw_data.(val_col) lt 60), count) ;ignore hlorey = 60
 	endelse

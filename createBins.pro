@@ -15,6 +15,7 @@
 
 
 function createBins, in_array, initial_n_bin, min_bin_width, min_bin_members, max_bin_start_val
+	print, initial_n_bin, max_bin_start_val
 	array_max = double(max(in_array))
 	array_min = double(min(in_array))
 	array_min = array_min - 0.00001 * abs(array_min)  ;for float comparison reasons
