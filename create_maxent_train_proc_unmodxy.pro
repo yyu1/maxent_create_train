@@ -30,8 +30,6 @@ PI = 3.141592653589793238d0
 ;valformat = '(f4.1)' ;format code for value
 ;-------------------------------------------------
 
-max_bin_start = 600
-
 
 ;**************
 journal, log_file
